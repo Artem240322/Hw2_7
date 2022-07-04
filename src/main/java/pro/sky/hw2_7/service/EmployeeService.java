@@ -41,8 +41,7 @@ public class EmployeeService {
         if (!employees.containsKey(getKey(employee))) {
             throw new EmployeeNotFoundException();
         }
-        employees.remove(key);
-        return employee;
+        return employees.remove(key);
     }
 
     public Employee find(String name, String surname){
