@@ -25,20 +25,19 @@ public class EmployeeService {
 
     public Employee add(String name, String surname) {
         Employee employee = new Employee(name, surname);
-        if (employees.containsKey(getKey(employee))) {
+        String key = getKey(employee);
+        if (employees.containsKey(key)) {
             throw new EmployeeAlreadyAddedException();
         }
         if (employees.size() < LIMIT) {
-            employees.put(getKey(employee), employee);
-            return employee;
+            return employees.put(key, employee);
         }
         throw new EmployeeStoragelsFullException();
     }
 
     public Employee remove(String name, String surname) {
-        Employee employee = new Employee(name, surname);
-        String key = getKey(employee);
-        if (!employees.containsKey(getKey(employee))) {
+        String key = getKey(new Employee(name, surname));
+        if (!employees.containsKey(key)) {
             throw new EmployeeNotFoundException();
         }
         return employees.remove(key);
