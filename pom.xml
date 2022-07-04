@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.example</groupId>
+    <groupId>pro.sky</groupId>
     <artifactId>Hw2_7</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Hw 2.7</name>
